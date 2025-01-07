@@ -1,15 +1,20 @@
+use std::fs::File;
+// use std::io;
+use std::io::ErrorKind;
+
 pub fn error_handling() {
-    let file = file::open("hello.txt");
+    let file = File::open("hello.txt");
+
     match file {
-        Ok(file) => {
+        Ok(_) => {
             println!("File opened successfully");
         }
         Err(error) => match error.kind() {
             ErrorKind::NotFound => {
-                println!("File not found");
+                panic!("File not found: {:?}", error);
             }
             other_error => {
-                println!("Error: {:?}", other_error);
+                panic!("An unexpected error occurred: {:?}", other_error);
             }
         },
     }

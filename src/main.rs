@@ -3,11 +3,13 @@ mod topics {
     pub mod matchex;
     pub mod variable; // Declare the `variable` module inside the `Topics` module
                       // Declare the `control_flow` module inside the `Topics` module
+    pub mod basic_error;
     pub mod return_value;
 }
 
 fn main() {
     println!("Hello, world!");
+    topics::basic_error::error_handling(); // Call the `error_handling` function from the `basic_error` module
     let input: String = String::from("apple,banana,carrot");
 
     let delimiter = ',';
