@@ -3,6 +3,7 @@ mod topics {
     pub mod matchex;
     pub mod variable; // Declare the `variable` module inside the `Topics` module
                       // Declare the `control_flow` module inside the `Topics` module
+    pub mod FilesizeConverter;
     pub mod basic_error;
     pub mod return_value;
 }
